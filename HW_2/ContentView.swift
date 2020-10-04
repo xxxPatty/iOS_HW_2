@@ -291,6 +291,10 @@ struct ContentView: View {
                 })
                 .fill(Color(red: (60/255), green: (30/255), blue: (30/255)))
             }
+            Conan()
+                .scaleEffect(0.5)
+                .rotationEffect(.degrees(135))
+                .position(x: 120, y: 70)
         }
     }
 }
