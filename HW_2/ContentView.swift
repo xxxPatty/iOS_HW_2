@@ -174,16 +174,16 @@ struct ContentView: View {
                         path.move(to: CGPoint(x:89, y:304))
                         path.addLine(to: CGPoint(x:88, y:308))
                     })
-                    .stroke(Color(red: (219/255), green: (128/255), blue: (121/255)),lineWidth: 2)
+                    .stroke(Color(red: (219/255), green: (128/255), blue: (121/255)),style: StrokeStyle(lineWidth: 4, lineCap: .round))
                     
                     Path({ path in  //腮紅
                         path.move(to: CGPoint(x:95, y:304))
                         path.addLine(to: CGPoint(x:96, y:308))
                     })
-                    .stroke(Color(red: (219/255), green: (128/255), blue: (121/255)),lineWidth: 2)
+                    .stroke(Color(red: (219/255), green: (128/255), blue: (121/255)),style: StrokeStyle(lineWidth: 4, lineCap: .round))
                 }
             }
-            
+        
             Group{
                 Group{  //右腮紅
                     //右腮紅
@@ -193,13 +193,13 @@ struct ContentView: View {
                         path.move(to: CGPoint(x:184, y:304))
                         path.addLine(to: CGPoint(x:183, y:308))
                     })
-                    .stroke(Color(red: (219/255), green: (128/255), blue: (121/255)),lineWidth: 2)
+                    .stroke(Color(red: (219/255), green: (128/255), blue: (121/255)),style: StrokeStyle(lineWidth: 4, lineCap: .round))
                     
                     Path({ path in  //腮紅
                         path.move(to: CGPoint(x:190, y:304))
                         path.addLine(to: CGPoint(x:191, y:308))
                     })
-                    .stroke(Color(red: (219/255), green: (128/255), blue: (121/255)), lineWidth: 2)
+                    .stroke(Color(red: (219/255), green: (128/255), blue: (121/255)), style: StrokeStyle(lineWidth: 4, lineCap: .round))
                 }
                 Text("I'm 胖達")
                     .position(x:200, y:200)
@@ -220,14 +220,14 @@ struct ContentView: View {
                     path.move(to: CGPoint(x:136, y:292))
                     path.addLine(to: CGPoint(x:142, y:293))
                 })
-                .stroke(Color(red: (60/255), green: (30/255), blue: (30/255)))
+                .stroke(Color(red: (60/255), green: (30/255), blue: (30/255)), style: StrokeStyle(lineWidth: 2, lineCap: .round))
                 
                 Path({ path in  //mouth
                     path.move(to: CGPoint(x:123, y:301))
                     path.addQuadCurve(to: CGPoint(x:138, y:298), control: CGPoint(x:132, y:303))
                     path.addQuadCurve(to: CGPoint(x:156, y:305), control: CGPoint(x:146, y:304))
                 })
-                .stroke(Color(red: (60/255), green: (30/255), blue: (30/255)))
+                .stroke(Color(red: (60/255), green: (30/255), blue: (30/255)), style: StrokeStyle(lineWidth: 2, lineCap: .round))
             }
             Group{
                 
@@ -349,6 +349,13 @@ struct rightFoot: View {
         foot()  //右腳
             .fill(Color(red: (60/255), green: (30/255), blue: (30/255)))
             .offset(x: 70, y: -2)
+    }
+}
+
+struct AppleView_LibraryContent:
+    LibraryContentProvider{
+    static var views:[LibraryItem]{
+        [LibraryItem(ContentView(), title:"胖達", category: .control)]
     }
 }
 
